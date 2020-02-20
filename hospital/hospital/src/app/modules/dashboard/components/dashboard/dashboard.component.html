@@ -1,0 +1,60 @@
+<button type="button" (click)="getHospital()" class="btn btn-primary  ml-4" data-toggle="modal" data-target="#newHospita" data-backdrop="static" data-keyboard="true"> Nuevo  </button>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#Id</th>
+            <th scope="col">Nombre</th>
+            <!-- <th scope="col">Usuario</th> -->
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of lista">
+            <th scope="row">{{item._id}}</th>
+            <td>{{item.nombre}}</td>
+            <!-- <td>{{item.usuario.nombre}}</td> -->
+            <td>
+                <!-- Single button -->
+                <button type="button" (click)="getHospital(item)" class="btn btn-default  ml-4" data-toggle="modal" data-target="#newHospita" data-backdrop="static" data-keyboard="true"> Editar  </button>
+                <button type="button" (click)="removeHospital(item._id)" class="btn btn-warning ml-4"> Borrar  </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+<!--Modal Nuevo-->
+<div class="modal fade custom-m-new" id="newHospita">
+    <div class="modal-dialog" role="document">
+        <!-- <form [formGroup]="asignTeacher"> -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4>Hospitales</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-8">
+                        <div class="form-group">
+                            <label>Nombre:*</label>
+                            <input class="form-control" [(ngModel)]="model.nombre" type="text" name="name" id="name">
+                        </div>
+                    </div>
+                    <!-- <div class="col-4">
+                            <div class="form-group">
+                                <label>Nro de estudiantes:*</label>
+                                <input type="text" class="form-control" formControlName="maxStudent">
+                            </div>
+                        </div> -->
+                </div>
+                <div class="modal-footer">
+                    <div class="text-right">
+                        <button type="button" id="closeButtom" class="btn btn-default mr-1" data-dismiss="modal">Cerrar</button>
+                        <button type="button" (click)="guardar()" class="btn btn-primary mr-1">Guardar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- </form> -->
+    </div>
+</div>

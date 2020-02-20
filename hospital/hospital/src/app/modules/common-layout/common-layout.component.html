@@ -1,0 +1,42 @@
+<!-- <div class="preloader">
+  <div class="loader">
+      <div class="loader__figure"></div>
+      <p class="loader__label">Admin Pro</p>
+  </div>
+</div> -->
+
+<div id="main-wrapper">
+
+    <!-- header -->
+    <app-header></app-header>
+
+    <!-- sidebar -->
+    <app-side-nav></app-side-nav>
+
+    <!-- content -->
+    <div class="page-wrapper">
+
+        <div class="container-fluid">
+
+            <app-breadcumbs></app-breadcumbs>
+            <!-- 
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            This is some text within a card block.
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+
+            <!-- aletr toasty-->
+            <!-- <ng2-toasty></ng2-toasty> -->
+
+            <router-outlet></router-outlet>
+
+        </div>
+        <app-footer></app-footer>
+    </div>
+
+</div>
